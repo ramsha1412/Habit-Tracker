@@ -66,7 +66,7 @@ newHabitBtn.onclick = () => {
     // Clear input
     habitInput.value = "";
 
-    // Store all 7 day elements for this habit
+    // Store the day elements for this habit
     const dayItems = [];
 
     days.forEach(dayElement => {
@@ -86,11 +86,12 @@ newHabitBtn.onclick = () => {
             };
 
             dayList.appendChild(dayNewLi);
+
             dayItems.push(dayNewLi);
         }
     });
 
-    // Delete habit and its day entries
+    // Delete habit
     deleteBtn.addEventListener("click", () => {
         newLi.remove();
 
