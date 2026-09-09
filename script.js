@@ -35,10 +35,7 @@ newHabitBtn.onclick=() => {
             emptyMessage.style.display = 'none';
             inputBox.style.visibility = 'hidden';
             
-            const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "🗑️";
-            deleteBtn.id = "delete-btn";
-            deleteBtn.onclick = () => newLi.remove();
+            
             const habitDiv = document.getElementById("div");
             const habitList = habitDiv.querySelector("ul");
             const newLi = document.createElement("li");
@@ -66,5 +63,13 @@ newHabitBtn.onclick=() => {
                   dayList.appendChild(dayNewLi);
              } 
             }); 
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "🗑️";
+            deleteBtn.id = "delete-btn";
+            deleteBtn.addEventListener("clicked", => {
+              newLi.remove();
+              dayNewLi.remove();
+            });
+              
       }
 };
