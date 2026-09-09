@@ -59,8 +59,8 @@ newHabitBtn.onclick = () => {
     deleteBtn.textContent = "🗑️";
     deleteBtn.className = "delete-btn";
 
-    newLi.appendChild(habitName);
     newLi.appendChild(deleteBtn);
+    newLi.appendChild(habitName);
     habitList.appendChild(newLi);
 
     // Clear input
