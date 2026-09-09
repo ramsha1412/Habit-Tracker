@@ -51,13 +51,13 @@ newHabitBtn.onclick = () => {
     // Create habit
     const newLi = document.createElement("li");
 
-    const habitName = document.createElement("span");
-    habitName.textContent = habitToAdd;
-
-    // Create delete button
+      // Create delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "🗑️";
     deleteBtn.className = "delete-btn";
+    
+    const habitName = document.createElement("span");
+    habitName.textContent = habitToAdd;
 
     newLi.appendChild(deleteBtn);
     newLi.appendChild(habitName);
