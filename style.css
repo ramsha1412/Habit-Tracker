@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xxx-large;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem;
+}
+button{
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 0.5rem;
+}
+#box{
+    width: min(100%, 72rem);
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: 1rem 1rem 1rem rgb(122 121 121 / 40%);
+    border: 2px solid rgba(212, 211, 211, 0.911);
+    border-radius: 6px;
+}
+#days{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+#days > div{
+    flex: 1 1 7rem;
+    min-width: 7rem;
+    text-align: center; /* Centers day labels and icons horizontally */
+}
+#div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 8rem;
+    gap: 0;
+}
+
+#div h2, #days h2 {
+    margin: 12px 0;
+    padding: 0;
+    font-size: xl-large;
+    height: 2.5rem; /* Forces headings to take up exact same vertical room */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🎯 CORE FIX: Synchronize spacing across all tracker lists */
+#div ul, #days ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Uniform space between every single row entry */
+    width: 100%;
+}
+
+/* 🎯 CORE FIX: Ensure every list item has the exact same block height */
+#div li, #days li {
+    font-size: large;
+    height: 2rem; /* Locked height preserves perfect grid line matching */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Align text to the left only for the main habit name list */
+#div li {
+    justify-content: flex-start; 
+}
+
+@media (max-width: 40rem){
+    #box{
+        flex-direction: column;
+    }
+
+    #div{
+        min-width: 0;
+    }
+}
+#input-box{
+    background-color: rgb(253, 252, 252);
+    border: 2px solid rgba(219, 217, 217, 0.911);
+    box-shadow: 1rem 1rem 1rem rgba(92, 92, 92, 0.4);
+    border-radius: 6px;
+    padding: 1rem;
+    gap: 2rem;
+    flex-direction: column;
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#new-habit-btn{
+    padding: 4px;
+}
+#empty-message{
+    text-align: center;
+}
+#list{
+    font-size: x-large;
+    align-items: center;
+}
+#habit{
+    font-size: xx-large;
+}
