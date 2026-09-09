@@ -17,6 +17,9 @@ const tickIcon = "✔️";
 
 addHabit.onclick = () => {
        inputBox.style.visibility = inputBox.style.visibility === 'visible' ? 'hidden' : 'visible';
+      if (inputBox.style.visibility === 'visible') {
+            habitInput.focus();
+      }
 }
 habitInput.addEventListener("keypress", (event) => {
       if(event.key === "Enter") {
@@ -32,10 +35,18 @@ newHabitBtn.onclick=() => {
             emptyMessage.style.display = 'none';
             inputBox.style.visibility = 'hidden';
             
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "🗑️";
+            deleteBtn.id = "delete-btn";
+            deleteBtn.onclick = () => newLi.remove();
             const habitDiv = document.getElementById("div");
             const habitList = habitDiv.querySelector("ul");
             const newLi = document.createElement("li");
-            newLi.textContent = habitToAdd;
+            const habitName = document.createElement("span");
+            habitName.textContent = habitToAdd;
+
+            newLi.appendChild(deleteBtn);
+            newLi.appendChild(habitName);
             habitList.appendChild(newLi);
             habitInput.value = "";
             
