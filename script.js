@@ -45,7 +45,7 @@ newHabitBtn.onclick = () => {
     emptyMessage.style.display = "none";
     inputBox.style.visibility = "hidden";
 
-    const habitDiv = document.getElementById("div");
+    const habitDiv = document.getElementById("habit-div");
     const habitList = habitDiv.querySelector("ul");
 
     // Create habit
